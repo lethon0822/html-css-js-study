@@ -1,0 +1,84 @@
+/* all:unset(display 포함 모든 서식 제거)
+   부모 태그만 적으면 다 적용되는 건 아님 */
+/* ↓ 태그 선택자 */
+body,
+h1,
+button {
+  all: unset;
+}
+
+body {
+  /* flex
+    : 부모 태그 안에 적어서 자식들을 컨트롤
+      방향이라는 개념이 있음. 보통 왼쪽->오른쪽
+      - justify-content: 가로로
+      - align-items: 세로로
+       */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* vh : 100% 느낌. viewpoint 크기에 맞춰서 차지함(vw도 있음)
+        100%로 하려면 부모 태그의 높이가 주어져야 함 */
+  height: 100vh;
+  background-color: #ddd;
+}
+
+/* 클래스 선택자(앞에 .이 붙은 이름)
+   태그 중에서 해당 이름의 클래스 이름을 가진 태그에 css 적용 */
+.stopwatch {
+  /* display는 언제든 덮어쓸 수 있음
+       참고 : https://velog.io/@hoje15v/CSSdisplay-%EC%86%8D%EC%84%B1-inline-block-inline-block-%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC */
+  display: inline-block;
+
+  /* padding VS margin
+     padding : border의 안쪽에 영역, 간격을 주는 것
+       - 3개를 적으면 위 좌우 밑 으로 적용됨
+     margin : border의 바깥쪽, 다른 border 사이에 영역, 간격을 주는 것 
+     */
+  padding: 48px 32px 72px;
+  background-color: #fff;
+  border: 4px solid #aaa;
+  border-radius: 24px;
+  /* box-shadow : 우측 아래 퍼짐(희미해짐)
+     rgba : a는 alpha값으로 투명도 (opacity) */
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.stopwatch h1 {
+  display: block;
+  font-family: "Noto Sans KR", sans-serif;
+
+  /* 해당 괄호 안에 있는 글자에만 배율 적용
+     rem은 root 기준 */
+  font-size: 0.5em;
+
+  /* text-transform : 영어일때만 적용
+       - uppercase대문자로 모두 변경 */
+  text-transform: uppercase;
+  color: grey;
+  margin-bottom: 16px;
+}
+
+.stopwatch_interface {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* #은 아이디 접근 */
+#screen {
+  padding: 8px 10px;
+  font-family: "press Start 2P";
+  color: #fff;
+  background-color: #000;
+  border-radius: 3px;
+}
+
+#button {
+  padding: 5px 10px;
+  color: #fff;
+  background-color: blue;
+  border-radius: 2px;
+}
