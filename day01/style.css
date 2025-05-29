@@ -31,7 +31,7 @@ body {
        참고 : https://velog.io/@hoje15v/CSSdisplay-%EC%86%8D%EC%84%B1-inline-block-inline-block-%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC */
   display: inline-block;
 
-  /* padding VS margin
+  /* padding vs margin
      padding : border의 안쪽에 영역, 간격을 주는 것
        - 3개를 적으면 위 좌우 밑 으로 적용됨
      margin : border의 바깥쪽, 다른 border 사이에 영역, 간격을 주는 것 
@@ -45,9 +45,14 @@ body {
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
 }
 
+/*  만약에 아이디와 클래스 사이의 이름을 띄우면 자식 중 해당 클래스를 가진 자식을 찾음 */
+#button.stop-color {
+  background-color: tomato;
+}
+
 .stopwatch h1 {
   display: block;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 
   /* 해당 괄호 안에 있는 글자에만 배율 적용
      rem은 root 기준 */
@@ -70,7 +75,7 @@ body {
 /* #은 아이디 접근 */
 #screen {
   padding: 8px 10px;
-  font-family: "press Start 2P";
+  font-family: 'press Start 2P';
   color: #fff;
   background-color: #000;
   border-radius: 3px;
@@ -79,6 +84,6 @@ body {
 #button {
   padding: 5px 10px;
   color: #fff;
-  background-color: blue;
+  background-color: steelblue;
   border-radius: 2px;
 }
