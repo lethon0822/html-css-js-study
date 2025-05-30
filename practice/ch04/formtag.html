@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formtag</title>
+  </head>
+  <body>
+    <h1>formtag.html</h1>
+
+    <!-- form : 사용자가 작성한 데이터를 백엔드로 보낼 때 사용
+         action : 목적지
+         method : 보내는 방법, get/post 방식이 존재 
+          - get : 목적지 URL에 데이터를 헤더에 실어서 보냄, 내용이 보임
+                  데이터는 쿼리스트링(Query String Parameters)로 표현
+          - post : 헤더, 바디로 이루어진 Request, body에 데이터를 데이터를 담아서 보냄
+                   표면상 내용이 보이지 않음, 쿼리스트링이 생기지 않음
+          -쿼리스트링 : url?key1=value1&key2=value2
+                        물음표로 시작, 속성명=속성값으로 구성, 속성끼리 구분은 &으로 -->
+
+    <form action="./01-result.html" method="post">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="my-name" />
+      <br /><br />
+      <label for="age">나이</label>
+      <input type="number" id="age" name="my-age" />
+      <br /><br />
+      <label for="age">비밀번호</label>
+      <input type="password" id="password" name="my-password" />
+      <br /><br />
+      <input type="submit" value="제출" />
+      <input type="reset" value="초기화" />
+    </form>
+  </body>
+</html>

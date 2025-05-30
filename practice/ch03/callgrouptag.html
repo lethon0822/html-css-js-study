@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callgrouptag</title>
+    <link
+      rel="stylesheet"
+      href="https://showcases.yalco.kr/html-css/01-06/table.css"
+    />
+    <style>
+      .weekdays {
+        background-color: aqua;
+      }
+      .wednesday {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>colgrouptag.html</h1>
+    <table>
+      <thead>
+        <tr>
+          <td scope="col">일</td>
+          <td scope="col">월</td>
+          <td scope="col">화</td>
+          <td scope="col">수</td>
+          <td scope="col">목</td>
+          <td scope="col">금</td>
+          <td scope="col">토</td>
+        </tr>
+      </thead>
+      <colgroup>
+        <col class="weekend" />
+        <col span="2" class="weekdays" />
+        <col span="1" class="wednesday" />
+        <col span="2" class="weekdays" />
+        <col class="weekend" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+        </tr>
+        <tr>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+        </tr>
+        <tr>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+        </tr>
+        <tr>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+          <td>_</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
