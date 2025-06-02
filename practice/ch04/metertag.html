@@ -8,9 +8,10 @@
   </head>
   <body>
     <h1>정도를 표현하는 태그</h1>
-    <progress id="progressBar" max="100" value="70">50%</progress>
+    <progress id="progressBar" max="100" value="70">70%</progress>
     <button id="prgStarBtn" type="button">시작</button>
     <script>
+      const $progressBar = document.querySelector('#progressBar');
       const $prgStarBtn = document.querySelector('#prgStarBtn');
       let value = 0;
       let intervalObj = null;
