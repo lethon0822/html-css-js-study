@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      input[type='range'] {
+        background-color: red;
+      }
+    </style>
+    <title>numberInputTag</title>
+  </head>
+  <body>
+    <h1>숫자 관련 인풋 타입</h1>
+    <!-- input같은 태그와 함께 사용 -->
+    <form action="#">
+      <!-- 쿼리스트링: 확인 후 만들어지는 주소창의 변수 나열
+             목적 : 백엔드로 데이터를 보내기 위해
+             key는 알지만 value는 어떤 값이 들어오는지 입력 전까지 모름-->
+      <label>
+        number: <input type="number" name="age" min="0" max="150" />
+      </label>
+
+      <div>
+        <label>
+          range: <input type="range" name="price" min="20" max="80" step="5" />
+          <span id="range_display"></span>
+        </label>
+      </div>
+      <div>
+        <label
+          >date: <input type="date" name="birth_date" min="2020-10-10" />
+        </label>
+      </div>
+      <div>
+        <label> time: <input type="time" name="birth_datetime" /></label>
+      </div>
+      <div>
+        <label> week: <input type="week" name="birth_datetime" /></label>
+      </div>
+      <div><input type="submit" value="확인" /></div>
+    </form>
+    <script>
+      const $range = document.querySelector('input[type="range"]');
+      const $rangeDisplay = document.querySelector('#range_display');
+      const $date = document.querySelector(
+        'input[type="date"][name="birth_date"]'
+      );
+
+      const $datetime = document.querySelector('input[type="datetime-local"]');
+      $datetime.value = '2025-10-10T14:12:12';
+
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const year = tomorrow.getFullYear();
+      const mon = String(tomorrow.getMonth() + 1).padStart(2, '0');
+      const day = String(tomorrow.getDate()).padStart(2, '0');
+      const nowDate = `${year}-${mon}-${day}`;
+      $date.value = nowDate;
+      $date.setAttribute('min', nowDate);
+      console.log('nowDate', nowDate);
+
+      $range.addEventListener('mousemove', (e) => {
+        $rangeDisplay.innerText = e.target.value;
+      });
+    </script>
+  </body>
+</html>

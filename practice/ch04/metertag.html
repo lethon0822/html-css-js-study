@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>metertag</title>
+  </head>
+  <body>
+    <h1>정도를 표현하는 태그</h1>
+    <progress id="progressBar" max="100" value="70">50%</progress>
+    <button id="prgStarBtn" type="button">시작</button>
+    <script>
+      const $prgStarBtn = document.querySelector('#prgStarBtn');
+      let value = 0;
+      let intervalObj = null;
+      $prgStarBtn.addEventListener('click', () => {
+        $progressBar.value = 0;
+        intervalObj = setInterval(() => {
+          if (value >= 100) {
+            clearInterval(intervalObj);
+            value = 0;
+            return;
+          }
+          $progressBar.value = ++value;
+        }, 10);
+      });
+    </script>
+  </body>
+</html>
