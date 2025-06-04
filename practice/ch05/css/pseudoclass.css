@@ -1,0 +1,20 @@
+/* 우선순위가 동일함, 가리키는 대상이 다름 */
+/* .outer > li li { color:olivedrab } */
+/* 캐스케이팅 : 어떤 스타일을 적용 받을지에 대한 우선순위가 결정되는 것 */
+.outer  li { color : olivedrab} /* descendant selector */
+.outer > li { color:dodgerblue } /* child selector */
+.outer > li ul { text-decoration: underline;}
+
+/* starter 이후의 요소들에 적용 (~) */
+.starter ~ li { font-style: italic; } /*  selector */
+
+ol :first-child, ol :last-child { color : yellowgreen}
+.outer > :not(:last-child) { background-color: antiquewhite;} /* not=반대로 선택*/
+
+ul :not(.outer) li { font-weight: bold;}
+
+/* 세번째 선택해 적용, 홀짝번째에 적용할때 주로 사용됨 */
+ol :nth-child(3) { font-weight: bold; color: deeppink} 
+ol :nth-child(even) { background-color: beige; }
+ol :nth-child(odd) { background-color: honeydew; }
+ol :nth-child(4n) { background-color: yellowgreen; } /* 4의 배수로 선택*/

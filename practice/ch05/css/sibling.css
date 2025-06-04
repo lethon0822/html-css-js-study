@@ -1,0 +1,2 @@
+h1 + p { background-color: #222; color: #fff;} /* adjacent selector (+) */
+h1 ~ p { color: blue} /* sibling selector (~) */

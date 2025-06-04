@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_style</title>
+    <style>
+      .style-1 {color: olivedrab;}
+    </style>
+    <!-- 추천은 link 방법 -->
+    <link rel="stylesheet" href="css/css_style.css">
+  </head>
+  <body>
+    <h1>CSS를 적용하는 세가지 방법</h1>
+    <!-- 우선순위 : 인라인 > 태그 > 링킹 -->
+    <div>
+      <strong style="color: tomato">인라인 스타일(inline style)</strong>
+    </div>
+    <div>
+      <strong class="style-1">내부 스타일 시트(internal style sheet)</strong>
+    </div>
+    <div>
+      <strong class="style-2">링킹 스타일 시트(linking style sheet)</strong>
+    </div>
+  </body>
+</html>
