@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>border_radius</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+      div {display: inline-block;}
+      /* 상하좌우 */
+      .box01 {border-radius: 10%;}
+      /* 상하 좌우 */
+      .box02 {border-radius: 10% 30%;}
+      /* 상 좌우 하 */
+      .box03 {border-radius: 10% 30% 50%;}
+      /* 상 우 하 좌(시계방향) */
+      .box04 {border-radius: 10% 30% 50% 20%;}
+    </style>
+  </head>
+  <body>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box02</div>
+    <div class="box04">box02</div>
+  </body>
+</html>

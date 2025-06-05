@@ -1,0 +1,5 @@
+span {background-color: slateblue; display: inline-block;}
+.container {background-color: #fff; }
+.container div {background-color: coral;}
+
+span, .container div {padding:20px;}

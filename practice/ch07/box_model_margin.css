@@ -1,0 +1,5 @@
+span {background-color: slateblue;}
+.container {background-color: #fff;}
+.container div {background-color: coral;}
+/* span은 좌우만, div는 상하좌우 적용 */
+span, .container div {margin:20px;}

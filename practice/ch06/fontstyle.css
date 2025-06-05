@@ -1,0 +1,9 @@
+/* normal, italic, oblique */
+/* normal, bold, 100~900 */
+div { font-style: oblique; font-weight: 400; font-size: 1.2em;}
+
+/* 기본 사이즈 16px */
+/* em: 바로 위에 있는 글자 크기에 비례
+  rem: html에서 설정돼있는 글자 크기에 비례 */
+html { font-size: 16px; }
+.font_rem { font-size: 1.2rem; }

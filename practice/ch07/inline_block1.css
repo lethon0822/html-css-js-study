@@ -1,0 +1,12 @@
+ul.case01 > li {
+  background-color: antiquewhite;
+  display: inline-block;
+  margin-right: 2rem;
+}
+ul { background-color:green;}
+ul > li { display: inline-block; background-color: antiquewhite;}
+
+/*모두 적용했다가 마지막만 0px 주기 */
+.case01 :last-child { margin-right: 0px; }
+/* 마지막을 제외한 li에만 적용 */
+.case02 > :not(:last-child) { margin-right: 2rem; }

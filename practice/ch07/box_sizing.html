@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=`" />
+    <title>box_sizing</title>
+    <style>
+      .container01 {
+        background-color: antiquewhite;
+      }
+      .container01 > div, .container02 > div {
+        width: 100px;
+        height: 100px;
+        padding: 40px;
+        background-color: brown;
+        border: 1px solid #000;
+      }
+      .container02 {
+        background-color: cadetblue;
+        margin-top: 2rem;
+      }
+      /* 알아서 사이즈를 조정해줌 */
+      .container02 > div {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container01">
+      <div>div1</div>
+      <div>div2</div>
+    </div>
+    <div class="container02">
+      <div>1</div>
+      <div>2</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+span {background-color: slateblue;}
+.container {background-color: #fff;}
+.container div {background-color: coral; display: inline;}
+.container :first-child {color:red;}
+
+/* 두가지 방법 모두 가능, 상황에 따라 더 유연한 방법으로 */
+.container div:first-of-type {color:blue;}
+.container :nth-child(2) {color:blue;}
+
+.inline_block {display: inline-block; width: 200px; height: 200px;}
