@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+Add commentMore actions header {
+  position: fixed;
+  background-color: gray;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.7em;
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 300vh;
+  margin-top: 90px;
+  background-color: blue;
+}
+
+.one {
+  width: 60%;
+  height: 100vh;
+}
+.one > img {
+  width: 100%;
+  display: block;
+}
+
+.two {
+  background-color: rgb(179, 206, 230);
+  width: 40%;
+  overflow: auto;
+  /* 크기가 지정될 것, 부모가 static이 아닐 것 */
+  position: sticky;
+  height: 50vh;
+  top: 0;
+  padding: 70px 0 0 12px;
+  text-align: center;
+}
+
+.three {
+  position: sticky;
+  top: 0;
+  background-color: beige;
+  height: 200px;
+  padding-top: 100px;
+}
