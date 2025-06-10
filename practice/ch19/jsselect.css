@@ -1,0 +1,13 @@
+section { padding: 50px; }Add commentMore actions
+ul { position: relative; }
+.soldout { display: inline-block; }
+.soldout::before {
+    position: absolute;
+    content: 'soldout';
+    left: -32px;
+    background-color: rgb(242, 84, 84);
+    font-weight: bold;
+    padding: 3px;
+    color: #fff;
+
+}

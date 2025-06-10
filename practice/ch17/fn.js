@@ -11,6 +11,8 @@ function sum(n1, n2) {
 }
 
 sum(2, 4);
+sum(5, 6, 7);
+sum(8);
 
 const copySum = sum;
 
