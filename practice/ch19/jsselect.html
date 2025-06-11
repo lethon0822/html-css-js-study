@@ -1,36 +1,72 @@
 <!DOCTYPE html>Add commentMore actions
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content=width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./jsselect.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./jsselect.css" />
+    <title>jsselect</title>
+  </head>
+  <body>
     <h1>장보기 목록</h1>
     <section class="plant">
-        <h2>채소</h2>
-        <ul>
-            <li>당근</li>
-            <li>오이</li>
-            <li class="soldout">양파</li>
-        </ul>
+      <h2>채소</h2>
+      <ul>
+        <li>당근</li>
+        <li>오이</li>
+        <li class="soldout">양파</li>
+      </ul>
     </section>
     <section id="sweets" class="plant">
-        <h2>과일</h2>
-        <ul>
-            <li>사과</li>
-            <li>딸기</li>
-            <li>포도</li>
-        </ul>
+      <h2>과일</h2>
+      <ul>
+        <li>사과</li>
+        <li>딸기</li>
+        <li>포도</li>
+      </ul>
     </section>
     <section>
-        <h2>고기</h2>
-        <ul>
-            <li class="soldout">소고기</li>
-            <li>돼지고기</li>
-            <li class="soldout">닭고기</li>
-        </ul>
+      <h2>고기</h2>
+      <ul>
+        <li class="soldout">소고기</li>
+        <li>돼지고기</li>
+        <li class="soldout">닭고기</li>
+      </ul>
     </section>
-</body>Add commentMore actions
+    <!-- Javascript -->
+    <script>
+      // querySelector : 처음 만나는 section 태그의 주소값만 선택이 되어 return
+      const $section = document.querySelector('section');
+      console.log($section);
+      
+      // section의 자식을 유사 배열로 저장
+      const firstSectionChildren = $section.children;
+      console.log('firstSectionChildren: ', firstSectionChildren);
+      
+      // 부모로 접근하여 주소값 저장, section과 같은 곳을 가리키고 있어 true
+      const $parentSection = firstSectionChildren[0].parentElement;
+      console.log($section === $parentSection);
+
+      // querySelectorAll : section 유사 배열 주소값 하나가 선택됨
+      const $sectionList = document.querySelectorAll('section');
+      console.log($sectionList);
+
+      // 모든 li 주소값 가져오기
+      const $all_li = document.querySelectorAll('li');
+      console.log($all_li);
+
+      // plant 클래스를 가진 엘리먼트의 주소값
+      const $plant = document.querySelectorAll('.plant');
+      console.log($plant);
+
+      // plant > ul > soldout의 엘리먼트 주소값
+      const $plant_soldout = document.querySelectorAll('.plant > ul > .soldout')
+      console.log($plant_soldout);
+
+      // sweets 아이디 안에 있는 ul 태그 바로 아래의 두번째 자식 주소값
+      const $sweets_ul_2nd = document.querySelector('#sweets > ul > :nth-child(2)');
+      console.log($sweets_ul_2nd);
+
+    </script>
+  </body>
+  Add commentMore actions
 </html>

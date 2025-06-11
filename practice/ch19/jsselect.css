@@ -1,13 +1,32 @@
-section { padding: 50px; }Add commentMore actions
-ul { position: relative; }
-.soldout { display: inline-block; }
-.soldout::before {
-    position: absolute;
-    content: 'soldout';
-    left: -32px;
-    background-color: rgb(242, 84, 84);
-    font-weight: bold;
-    padding: 3px;
-    color: #fff;
-
+body {
+  padding: 16px 32px;
 }
+section {
+  margin: 12px 0;
+  padding: 50px;
+  background-color: bisque;
+  border-radius: 12px;
+}
+section.plant {
+    background-color: lightgreen;
+}
+ul {
+  position: relative;
+}
+.soldout {
+  display: inline-block;
+}
+/* before : 클래스 대상의 앞쪽에 만들어주기 (Sold Out) */
+.soldout::before {
+  position: absolute;
+  content: 'Sold Out';
+  left: -12px;
+  background-color: rgb(242, 84, 84);
+  font-weight: bold;
+  font-size: .5em;
+  padding: 3px;
+  color: #fff;
+}
+
+.hidden{ display: none; }
+.organic::after { content: '(유기농)'}

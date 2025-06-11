@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsedit02</title>
+    <style>
+        body { padding: 16px 32px }
+    </style>
+</head>
+<body>
+    <h1>jsedit02.html</h1>
+    <a href="www.naver.com" target="_blank" kkk="크크크">웹 사이트 바로가기</a>
+    <br>
+    <input type="text" name="message" value="Hello World!">
+    <br>
+    <input type="checkbox" id="checkbox" name="toggle">
+    <label for="checkbox">체크박스</label>
+    <script>
+        const $hyperLink = document.querySelector('a');
+
+        // getAttribute가가져올 수 있는 게 더 많은 듯함
+        console.log('$hyperLink.href: ', $hyperLink.href);
+        console.log('$hyperLink.getAttribute("href"):', $hyperLink.getAttribute('href'));
+        
+        $hyperLink.setAttribute('href', 'https://yalco.kr');
+        console.log('$hyperLink.getAttribute("href"):', $hyperLink.getAttribute('href'));
+        
+        // 두 속성을 갖고 있는(AND) input 태그의 주소값
+        const $message = document.querySelector('input[name="message"][type="text"]');
+        console.log($message);        
+        // getAttribute로도 가능하긴 함
+        console.log('$message.value', $message.value); 
+        $message.value = '헬로우 월드!';
+        console.log('$message.value', $message.value); 
+    </script>
+</body>
+</html>
