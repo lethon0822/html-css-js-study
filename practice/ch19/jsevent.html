@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsevent</title>
+    <style>
+      body {
+        padding: 16px 32px;
+        font-size: 1.2em;
+      }
+      button,
+      input[type='text'] {
+        padding: 0.5em 1em;
+        font-size: 1.2em;
+      }
+
+      #click_position {
+        display: inline-block;
+        margin: 24px 0;
+        width: 400px;
+        height: 240px;
+        background-color: lightblue;
+        line-height: 240px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jsevent.html</h1>
+    <button id="myButton">이벤트를 부여하세요.</button>
+    <br />
+    <div id="click_position">클릭 전</div>
+    <br />
+    <div id="view"></div>
+    <input type="text" id="my_input" />
+    <script>
+      const $myButton = document.querySelector('#myButton');
+      function clickBtn() {
+        console.log('버튼 클릭!');
+      }
+      // addEventListner : 문자열-이벤트 이름(click 등), 콜백 함수-함수의 주소값
+      $myButton.addEventListener('click', clickBtn);
+
+      // 익명 함수를 이용할 때가 더 많다.
+      $myButton.addEventListener('mouseenter', function () {
+        console.log('진입');
+      });
+
+      // 화살표 함수(익명 함수라면 화살표 함수를 더 많이 쓰는 편)
+      // 생략 가능한 것 : 중괄호(이때 리턴도 생략 가능), 소괄호(인자가 하나일 때)
+      //                  중괄호 생략될 때 세미콜론 적으면 안 된다.
+      $myButton.addEventListener('mouseleave', () => {
+        console.log('이탈');
+      });
+
+      const $clickPosition = document.querySelector('#click_position');
+      $clickPosition.addEventListener('click', e => {
+        const text = `x: ${e.clientX}, y: ${e.clientY}`;
+        e.target.textContent = text;
+      });
+
+      const $myInput = document.querySelector('#my_input');
+
+      $myInput.addEventListener(`focus`, e => {
+        // e.target 자리에 $myInput을 넣어도 작동은 하나 
+        // $myInput을 적으면 작업이 끝나도 메모리를 차지하고 연결돼있음(클로저)
+        e.target.setAttribute('Placeholder', '포커스된 상태');
+      });
+
+      $myInput.addEventListener(`blur`, e => {
+        e.target.setAttribute('Placeholder', '');
+      });
+
+      const $view = document.querySelector('#view');
+
+      // change : 포커스를 잃어야만(변화)이 이벤트 발생
+      $myInput.addEventListener('keyup', e => {
+        $view.textContent = e.target.value;
+      });
+
+    </script>
+  </body>
+</html>
