@@ -74,11 +74,52 @@ aboutCards.forEach((item, idx) => {
 //   $aboutDiv.appendChild($div);
 // }
 
-
-const $currList = document.querySelectorAll('#curriculum .curriculum__list > li');
-const $currProgBar = document.querySelector('#curriculum .curriculum__progress .bar');
+const $currList = document.querySelectorAll(
+  '#curriculum .curriculum__list > li'
+);
+const $currProgBar = document.querySelector(
+  '#curriculum .curriculum__progress .bar'
+);
 
 $currList.forEach((item, index) => {
-    item.addEventListener('mouseenter', () => $currProgBar.style.width = `${200 * index}px`);
-    item.addEventListener('mouseleave', () => $currProgBar.style.width = 0);
+  item.addEventListener(
+    'mouseenter',
+    () => ($currProgBar.style.width = `${200 * index}px`)
+  );
+  item.addEventListener('mouseleave', () => ($currProgBar.style.width = 0));
 });
+
+const $contactTabs = document.querySelectorAll('#contact #ct_1, #ct_2');
+const $contactSlideCon = document.querySelector('#contact .contact__slide-con');
+
+$contactTabs.forEach((item, index) => {
+  const marginLeft = [0, '-100vw'][index];
+  // 아래와 동일한 한 문장
+  // let marginLeft = 0;
+  // if (index === 0){
+  //   marginLeft = 0;
+  // } else if (index === 1){
+  //   marginLeft = '-100vw';
+  // }
+
+  item.addEventListener('click', () => {
+    $contactSlideCon.style.marginLeft = marginLeft;
+  });
+});
+
+const $menuBtn = document.querySelector('header.header button.header__menu-btn');
+const $headerNav = document.querySelector('header.header nav.header__nav');
+
+// e로 조작하기
+$menuBtn.addEventListener('click', (e) => {
+  $menuBtn.classList.toggle('on');
+  $headerNav.classList.toggle('active');
+
+  e.stopPropagation(); // 버블링 중지
+});
+
+const $body = document.querySelector('body');
+$body.addEventListener('click', () => {
+  $menuBtn.classList.remove('on');
+  $headerNav.classList.remove('active');
+})
