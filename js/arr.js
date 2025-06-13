@@ -6,10 +6,7 @@ arr.forEach(function (item, index) {
 });
 
 let sum = 0;
-arr.forEach( (item) => {
-    sum += item;
-    console.log('sum: ', sum)
-});
+arr.forEach((item) => sum += item);
 
 // 유사 배열
 const myArr = {
@@ -20,8 +17,8 @@ const myArr = {
   4: 50,
   length: 5,
   forEach: function (cb) {
-    for (let i = 0; i< this.length; i++) {
-        cb(this[i], i);
+    for (let i = 0; i < this.length; i++) {
+      cb(this[i], i);
     }
   },
 };
