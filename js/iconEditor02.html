@@ -43,9 +43,11 @@
 
             const $inputButtonClear = makeElement('input', { type: 'button', value: '전체 삭제' });
             $inputButtonClear.addEventListener('click', () => {
-                for (const $tr of $table.children) {
-                    for (const $td of $tr.children) {
-                        $td.style.backgroundColor = null;
+                if (confirm("정말 지우나요?")) {
+                    for (const $tr of $table.children) {
+                        for (const $td of $tr.children) {
+                            $td.style.backgroundColor = null;
+                        }
                     }
                 }
             });
@@ -61,7 +63,13 @@
                     const $td = makeElement('td');
                     $tr.appendChild($td);
                     $td.addEventListener('click', () => {
-                        $td.style.backgroundColor = $inputColor.value;
+                        if ($td.style.backgroundColor) {
+                            $td.style.backgroundColor = '';
+                        } else {
+                            $td.style.backgroundColor = $inputColor.value;
+                        }
+                        // 선생님 풀이
+                        // $td.style.backgroundColor = !$td.style.backgroundColor ? $inputColor.value : '';
                     });
                 }
             }
